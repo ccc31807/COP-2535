@@ -1,0 +1,55 @@
+/*************************************
+	Name: Exercise01
+	Author: Charles Carter
+	Date: January 5, 2023
+	Purpose: print hello and system information
+	Input: none
+	Output: name and system info
+***************************************/
+
+#include <iostream>
+#include <windows.h>
+#include <stdio.h>
+#pragma comment(lib, "user32.lib")
+
+using namespace std;
+
+
+int main()
+{
+	cout << "Hello world\n\n";
+
+	cout << "CCCCCCCCC                        " << endl;
+	cout << "CCCCCCCCC     ++          ++     " << endl;
+	cout << "CC            ++          ++     " << endl;
+	cout << "CC            ++          ++     " << endl;
+	cout << "CC         ++++++++    ++++++++  " << endl;
+	cout << "CC         ++++++++    ++++++++  " << endl;
+	cout << "CC            ++          ++     " << endl;
+	cout << "CC            ++          ++     " << endl;
+	cout << "CCCCCCCCC     ++          ++     " << endl;
+	cout << "CCCCCCCCC                        " << endl;
+	cout << endl << endl;
+
+	SYSTEM_INFO siSysInfo;
+
+	// Copy the hardware information to the SYSTEM_INFO structure. 
+
+	GetSystemInfo(&siSysInfo);
+
+	// Display the contents of the SYSTEM_INFO structure. 
+	printf("Hardware information: \n");
+	printf("  OEM ID: %u\n", siSysInfo.dwOemId);
+	printf("  Number of processors: %u\n",
+		siSysInfo.dwNumberOfProcessors);
+	printf("  Page size: %u\n", siSysInfo.dwPageSize);
+	printf("  Processor type: %u\n", siSysInfo.dwProcessorType);
+	printf("  Minimum application address: %lx\n",
+		siSysInfo.lpMinimumApplicationAddress);
+	printf("  Maximum application address: %lx\n",
+		siSysInfo.lpMaximumApplicationAddress);
+	printf("  Active processor mask: %u\n",
+		siSysInfo.dwActiveProcessorMask);
+
+	return 0;
+}
