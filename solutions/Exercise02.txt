@@ -1,0 +1,70 @@
+/*************************************
+	Name: Exercise1-2
+	Author: Charles Carter
+	Date: December 7, 2022
+	Purpose: geometry calculator
+	Input: radius, a, b, c
+	Output: circle, sphere, triangle, quadratic
+***************************************/
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+const double PI = 3.1415926;
+
+int main()
+{
+	int radius;
+	int a, b, c;
+	double area, circumference, volume;
+	double p;
+	double posnum, negnum, denom;
+
+	cout << "Geometry Calculator\n" << endl;
+	cout << "Calculating area and circumference of a circle" << endl;
+	cout << "Enter the length of the radius as an integer: ";
+	cin >> radius;
+	area = PI * radius * radius;
+	circumference = 2.0 * PI * radius;
+	cout << "The area of your circle is " << area << " and the circumference is " << circumference << endl << endl;
+
+	cout << "Calculating volume and area of a sphere" << endl;
+	cout << "Calculating area and volume of a heisphere" << endl;
+	cout << "Enter the length of the radius as an integer: ";
+	cin >> radius;
+	volume = ((4.0 / 3.0) * PI * radius * radius * radius);
+	area = 4.0 * PI * radius * radius;
+	cout << "The area of your sphere is " << area << " and the volume is " << volume << endl << endl;
+
+	cout << "Calculating area of a triangle using Heron's method" << endl;
+	cout << "Enter the length of side A as an integer: ";
+	cin >> a;
+	cout << "Enter the length of side B as an integer: ";
+	cin >> b;
+	cout << "Enter the length of side C as an integer: ";
+	cin >> c;
+	p = (a + b + c) / 2.0;
+	area = sqrt(p * (p-a) * (p-b) * (p-c));
+	cout << "The area of your triangle is " << area  << endl << endl;
+
+	cout << "Calculating the roots of a quadratic equation" << endl;
+	cout << "Enter coefficiebt A as an integer: ";
+	cin >> a;
+	cout << "Enter coefficiebt B as an integer: ";
+	cin >> b;
+	cout << "Enter coefficiebt C as an integer: ";
+	cin >> c;
+
+	posnum = -b + sqrt((b * b) - (4.0 * a * c));
+	negnum = -b - sqrt((b * b) - (4.0 * a * c));
+	denom = 2.0 * a;
+
+	cout << " The roots are " << posnum / denom << " and " << negnum / denom << endl;
+
+
+
+
+	return 0;
+}
+
